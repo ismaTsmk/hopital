@@ -1,8 +1,32 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Navbar from '../Components/navbar'
 
 export default function Home() {
+
+const autorisedNotif = () => {
+
+  const randomNotification =() => {
+    var randomItem = 5
+    var notifTitle = "dhfjfbhf"
+    var notifBody = 'Créé par ';
+    var notifImg = 'data/img';
+    var options = {
+        body: notifBody,
+        icon: notifImg
+    }
+    var notif = new Notification(notifTitle, options);
+    setTimeout(randomNotification, 30000);
+}
+
+  Notification.requestPermission().then(function(result) {
+    if(result === 'granted') {
+        randomNotification();
+    }
+});
+}
+
   return (
     <div className={styles.container}>
       <Head>
@@ -57,11 +81,17 @@ export default function Home() {
         <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
         {/* --> */}
       </Head>
+      <Navbar/>
 
       <main className={styles.main}>
+
+
         <h1 className={styles.title}>
           Bienvenue sur <a href="https://nextjs.org">DigiTak Opii!</a>
         </h1>
+        <button onClick={autorisedNotif}>
+          notification autorisation 
+        </button>
 
         <p className={styles.description}>
           Connectez vous
