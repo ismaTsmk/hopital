@@ -2,7 +2,18 @@ import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import Button from 'react-bootstrap/Button'
 import Link from 'next/link'
-import { List, HouseDoor } from 'react-bootstrap-icons';
+import { List, HouseDoor, Person } from 'react-bootstrap-icons';
+// import Providers from 'next-auth/providers'
+
+// import { useSession } from "next-auth/react"
+import {
+    signIn,
+    signOut,
+    useSession
+} from "next-auth/react"
+
+// import { useSession } from "next-auth/react"
+
 
 
 
@@ -13,15 +24,30 @@ export default function Navbar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    // const { data: session, status,loading } = useSession()
+
+    // console.log({session,status,loading})
+
+
+    // const [ session, loading ] = useSession()
+
+
     return (
         <>
-        <div className='mb-5'></div>
-            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between' >
+            <div className='mb-5'></div>
+            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between  bg-dark pt-3 pb-2 px-2'  style={{zIndex:9999}}>
                 <Link href="/">
                     <a className="cursor-pointer">
                         <HouseDoor color="royalblue" size={25} />
                     </a>
                 </Link>
+
+                <Link href="/login">
+                    <a className="cursor-pointer">
+                        <Person color="royalblue" size={25} />
+                    </a>
+                </Link>
+
                 <Button variant="outline-primary" onClick={handleShow}>
                     <List color="royalblue" size={25} />
                 </Button>

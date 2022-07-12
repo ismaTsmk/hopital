@@ -6,8 +6,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import pose from "./../images/pose_3.png"
 
+import axios from '../lib/axios'
 
-export default function Home() {
+const Home = ({offices}) => {
+
+  console.log('ddhdhjd')
+  console.log(offices)
 
   const autorisedNotif = () => {
 
@@ -168,4 +172,19 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export default Home
+
+
+export async function getStaticProps() {
+  const response = await axios.post('api/test',[]);
+  console.log(response.data.data)
+
+  return {
+      props: {
+          offices: response.data.data
+      },
+  }
 }
