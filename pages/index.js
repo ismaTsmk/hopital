@@ -6,12 +6,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import pose from "./../images/pose_3.png"
 
-import axios from '../lib/axios'
+// import axios from '../lib/axios'
 
-const Home = ({offices}) => {
+const Home = () => {
 
-  console.log('ddhdhjd')
-  console.log(offices)
 
   const autorisedNotif = () => {
 
@@ -128,7 +126,7 @@ const Home = ({offices}) => {
             </Card>
           </div>
         </div>
-
+{/* 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Mon planning &rarr;</h2>
@@ -139,34 +137,16 @@ const Home = ({offices}) => {
             <h2>Urgence secours  &rarr;</h2>
             <p>Veuilliez intervennir de toute urgence </p>
           </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="/"
+          href="https://tismatek.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{'La Team'}
+          Powered by{'Tismatek'}
 
         </a>
       </footer>
@@ -178,13 +158,13 @@ const Home = ({offices}) => {
 export default Home
 
 
-export async function getStaticProps() {
-  const response = await axios.post('api/test',[]);
-  console.log(response.data.data)
+// export async function getStaticProps() {
+//   const response = await axios.post('api/test',[]);
+//   console.log(response.data.data)
 
-  return {
-      props: {
-          offices: response.data.data
-      },
-  }
-}
+//   return {
+//       props: {
+//           offices: response.data.data
+//       },
+//   }
+// }
