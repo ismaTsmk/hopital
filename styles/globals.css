@@ -23,3 +23,28 @@ a {
 .list-group-item{
   cursor: pointer;
 }
+
+
+.input-search{
+  border-radius: 9px;
+  color: rgb(21, 138, 234);
+  border: 1px solid #1480ec;
+
+}
+
+
+.card-slider{
+  background-color:  #0b39e2;
+  /* background:url('../images/pose_3.png'),
+  linear-gradient( rgba(9, 74, 204, 1) 100%, rgba(6, 20, 230, 1)100%); */
+  background-repeat: no-repeat;
+  background-position: left;
+  border-radius: 20px;
+}
+
+.rounded-20{
+  border-radius: 20px!important;
+}
+.rounded-8{
+  border-radius: 8px!important;
+}

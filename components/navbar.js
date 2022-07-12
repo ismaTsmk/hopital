@@ -15,6 +15,7 @@ export default function Navbar() {
 
     return (
         <>
+        <div className='mb-5'></div>
             <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between' >
                 <Link href="/">
                     <a className="cursor-pointer">
