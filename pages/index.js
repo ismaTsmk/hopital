@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Navbar from '../Components/navbar'
 
 export default function Home() {
 
@@ -81,16 +80,15 @@ const autorisedNotif = () => {
         <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
         {/* --> */}
       </Head>
-      <Navbar/>
 
       <main className={styles.main}>
 
 
         <h1 className={styles.title}>
-          Bienvenue sur <a href="https://nextjs.org">DigiTak Opii!</a>
+          Bienvenue sur <a href="/j">DigiTak Opii!</a>
         </h1>
-        <button onClick={autorisedNotif}>
-          notification autorisation 
+        <button className='btn btn-outline-primary mt-5' onClick={autorisedNotif}>
+          autoriser les notifications  
         </button>
 
         <p className={styles.description}>
@@ -100,13 +98,13 @@ const autorisedNotif = () => {
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
+            <h2>Mon planning &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <h2>Urgence secours  &rarr;</h2>
+            <p>Veuilliez intervennir de toute urgence </p>
           </a>
 
           <a

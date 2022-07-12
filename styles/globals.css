@@ -16,3 +16,10 @@ a {
 }
 
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-group-item{
+  cursor: pointer;
+}
