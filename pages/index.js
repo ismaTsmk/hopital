@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { List, Search, Calendar,Chat } from 'react-bootstrap-icons';
+import { List, Search, Calendar, Chat } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import pose from "./../images/pose_3.png"

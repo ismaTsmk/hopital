@@ -54,7 +54,7 @@ export default function Navbar() {
             </div>
 
 
-            <Offcanvas show={show} onHide={handleClose} style={{zIndex:9999}}>
+            <Offcanvas show={show} onHide={handleClose}  style={{zIndex:9999}}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>
