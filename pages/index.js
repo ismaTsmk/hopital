@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { List, Search } from 'react-bootstrap-icons';
+import { List, Search, Calendar,Chat } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import pose from "./../images/pose_3.png"
+import mec from "./../images/mec.png"
+import meuf from "./../images/meuf.png"
+import mamie from "./../images/mamie.png"
+import Badge from 'react-bootstrap/Badge';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 // import axios from '../lib/axios'
 
@@ -88,33 +94,104 @@ const Home = () => {
         {/* --> */}
       </Head>
 
-      <main className='container p-1 ' >
+      <main className='container p-1  ' >
 
         <div className='row d-flex flex-column justify-content-center px-4'>
           <h1 className="fs-4">
-            Hello <span className='text-blue'>Mike!</span>
+            Hello <br /> Columbine!
           </h1>
-          <div className='d-flex'>
+          <div className='d-flex d-none'>
             <input className='form-control' type="text" placeholder="recherhez un medecin" />
             <Button variant="outline-primary" >
               <Search color="royalblue" size={25} />
             </Button>
 
           </div>
+          <div className='px-5 d-flex  justify-content-between'>
+            <a variant="outline-primary" >
+              <Calendar color="royalblue" size={20} />
+            </a>
+
+            <a variant="outline-primary" >
+              <Chat color="royalblue" size={25} />
+            </a>
+
+
+          </div>
           <button className='btn btn-outline-primary mt-3' onClick={autorisedNotif}>
-              autoriser les notifications
-            </button>
+            autoriser les notifications
+          </button>
         </div>
-
-
-
-        <p className={styles.description}>
-          Connectez vous
-          {/* <code className={styles.code}>pages/index.js</code> */}
-        </p>
         <div className='container'>
-          <div className='row px-4'>
-            <Card className='col-12 card-slider' style={{ background: "#3D35E1", borderRadius: "20px", height: "157px" }} >
+          <div className='row p-4 '>
+            <Card className='col-12 rounded-20  px-3 py-2 mb-4 ' style={{ background: "#C0C0C0", borderRadius: "20px", }} >
+              <div>
+                <h2 className="p-0 m-0"> Coord</h2>
+                <div className='d-flex flex-row align-items-center justify-content-between p-0 m-0'>
+                  <Card.Img className='' src={mamie.src} style={{ height: "50px", width: "50px", bottom: 0 }} />
+                  <div className='row'>
+                    <Card.Body className='ps-3  offset-4 col-8 position-relative text-light' style={{ zIndex: '1' }}>
+                      <Card.Title className="text-right">Point covid à 10h50 le 12/09</Card.Title>
+                      <Button className="btn bg-light text-dark py-0 rounded-8">Notifier</Button>
+                    </Card.Body>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </Card>
+
+
+            <Card className='col-12 rounded-20  px-3 py-2 ' style={{ background: "rgba(245, 40, 145, 0.13)", borderRadius: "20px", }} >
+              <h2 className="p-0 m-0"> Dechoc</h2>
+              <Card.Body className='col-12 position-relative text-light' style={{ zIndex: '1' }}>
+                <ListGroup as="ol" >
+                  <ListGroup.Item
+                    as="li"
+                    className="d-flex justify-content-between align-items-start"
+                  >
+                  <Card.Img className='' src={mamie.src} style={{ height: "50px", width: "50px", bottom: 0 }} />
+
+                    <div className="ms-2 me-auto">
+                      <div className="fw-bold">Subheading</div>
+                      Cras justo odio
+                    </div>
+                    <Badge bg="primary" pill>
+                      88988
+                    </Badge>
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    as="li"
+                    className="d-flex justify-content-between align-items-start"
+                  >
+                    <div className="ms-2 me-auto">
+                      <div className="fw-bold">Subheading</div>
+                      Cras justo odio
+                    </div>
+                    <Badge bg="primary" pill>
+                      14
+                    </Badge>
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    as="li"
+                    className="d-flex justify-content-between align-items-start"
+                  >
+                    <div className="ms-2 me-auto">
+                      <div className="fw-bold">Subheading</div>
+                      Cras justo odio
+                    </div>
+                    <Badge bg="primary" pill>
+                      14
+                    </Badge>
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+
+            </Card>
+
+
+            <Card className='col-12 card-slider d-none' style={{ background: "#3D35E1", borderRadius: "20px", height: "157px" }} >
               <Card.Img className=' position-absolute ' src={pose.src} style={{ zIndex: '1', width: "202px", height: "202px", bottom: 0 }} />
               <div className='row'>
                 <Card.Body className='ps-3 pt-4 mt-3 offset-4 col-8 position-relative text-light' style={{ zIndex: '1' }}>
@@ -126,7 +203,7 @@ const Home = () => {
             </Card>
           </div>
         </div>
-{/* 
+        {/* 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Mon planning &rarr;</h2>

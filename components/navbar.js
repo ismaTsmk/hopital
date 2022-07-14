@@ -24,7 +24,7 @@ export default function Navbar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // const { data: session, status,loading } = useSession()
+    const { data: session, status } = useSession()
 
     // console.log({session,status,loading})
 
@@ -34,8 +34,8 @@ export default function Navbar() {
 
     return (
         <>
-            <div className='mb-5'></div>
-            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between  bg-dark pt-3 pb-2 px-2'  style={{zIndex:9999}}>
+            {/* <div className='mb-5'></div> */}
+            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between  bg-dark pt-3 pb-2 px-2'  style={{zIndex:99}}>
                 <Link href="/">
                     <a className="cursor-pointer">
                         <HouseDoor color="royalblue" size={25} />
@@ -54,14 +54,14 @@ export default function Navbar() {
             </div>
 
 
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas show={show} onHide={handleClose} style={{zIndex:9999}}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className="p-0 m-0">
                     <ol className="list-group list-group-numbered">
-                        <Link href="/planning" onClick={handleClose}>
-                            <a>
+                        <Link href="/planning" >
+                            <div onClick={handleClose}>
                                 <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-start border-0">
                                     <div className="ms-2 me-auto">
                                         <div className="fw-bold">Urgence Immediate</div>
@@ -69,11 +69,11 @@ export default function Navbar() {
                                     </div>
                                     <span className="badge bg-primary rounded-pill">14</span>
                                 </li>
-                            </a>
+                            </div>
 
                         </Link>
-                        <Link href="/etudes" onClick={handleClose}>
-                            <a>
+                        <Link href="/etudes" >
+                            <div onClick={handleClose}>
                                 <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-start border-0">
                                     <div className="ms-2 me-auto">
                                         <div className="fw-bold">Etude en cours</div>
@@ -81,7 +81,7 @@ export default function Navbar() {
                                     </div>
                                     <span className="badge bg-primary rounded-pill">4</span>
                                 </li>
-                            </a>
+                            </div>
 
                         </Link>
                         <li className="list-group-item d-flex justify-content-between align-items-start border-0">
