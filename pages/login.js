@@ -31,69 +31,27 @@ export default function Login() {
                 <title>ergodnc — Login</title>
             </Head>
 
-            <div className={"w-1/2 mx-auto bg-white p-5 rounded-lg"}>
-                <Errors className="mb-5" errors={errors} />
+            <form>
+    <img className="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
+    <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-                <form onSubmit={submitForm} autoComplete="off">
-                    <div>
-                        <Label htmlFor="email">Email</Label>
+    <div className="form-floating">
+      <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+      <label >Email address</label>
+    </div>
+    <div className="form-floating">
+      <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
+      <label >Password</label>
+    </div>
 
-                        <Input
-                            id="email"
-                            type="email"
-                            value={email}
-                            className="block mt-1 w-full"
-                            onChange={event => setEmail(event.target.value)}
-                            required
-                            autoFocus
-                            autoComplete="off"
-                        />
-                    </div>
-
-                    <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
-
-                        <Input
-                            id="password"
-                            type="password"
-                            value={password}
-                            className="block mt-1 w-full"
-                            onChange={event => setPassword(event.target.value)}
-                            required
-                            autoComplete="current-password"
-                        />
-                    </div>
-
-                    <div className="block mt-4">
-                        <label
-                            htmlFor="remember_me"
-                            className="inline-flex items-center">
-                            <input
-                                id="remember_me"
-                                type="checkbox"
-                                name="remember"
-                                checked={remember}
-                                onChange={event => setRemember(!remember)}
-                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                            />
-
-                            <span className="ml-2 text-gray-600">
-                            Remember me
-                        </span>
-                        </label>
-                    </div>
-
-                    <div className="flex items-center justify-end mt-4">
-                        <Link href="/forgot-password">
-                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Forgot your password?
-                            </a>
-                        </Link>
-
-                        <Button className="ml-3">Login</Button>
-                    </div>
-                </form>
-            </div>
+    <div className="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"/> Remember me
+      </label>
+    </div>
+    <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p className="mt-5 mb-3 text-muted">© 2017–2022</p>
+  </form>
         </>
     )
 }

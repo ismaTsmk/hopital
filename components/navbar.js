@@ -24,18 +24,10 @@ export default function Navbar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // const { data: session, status,loading } = useSession()
-
-    // console.log({session,status,loading})
-
-
-    // const [ session, loading ] = useSession()
-
 
     return (
         <>
-            <div className='mb-5'></div>
-            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between  bg-dark pt-3 pb-2 px-2'  style={{zIndex:9999}}>
+            <div className='w-100 position-fixed top-0  end-0 d-flex justify-content-between  bg-dark pt-3 pb-2 px-2'  style={{zIndex:99}}>
                 <Link href="/">
                     <a className="cursor-pointer">
                         <HouseDoor color="royalblue" size={25} />
@@ -54,7 +46,7 @@ export default function Navbar() {
             </div>
 
 
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas show={show} onHide={handleClose}  style={{zIndex:9999}}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>

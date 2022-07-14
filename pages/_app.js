@@ -14,6 +14,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     // </SessionProvider>
     <>
        <Navbar />
+       <div className='my-5 pt-2'></div>
+
       <Component {...pageProps} />
     
     </>
