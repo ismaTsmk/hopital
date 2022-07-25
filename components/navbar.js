@@ -3,6 +3,9 @@ import Offcanvas from 'react-bootstrap/Offcanvas'
 import Button from 'react-bootstrap/Button'
 import Link from 'next/link'
 import { List, HouseDoor, Person } from 'react-bootstrap-icons';
+
+// import useAuth from '../lib/useAuth'
+
 // import Providers from 'next-auth/providers'
 
 // import { useSession } from "next-auth/react"
@@ -26,6 +29,9 @@ export default function Navbar() {
 
     const { data: session, status } = useSession()
 
+    // const {user, logout} = useAuth()
+
+
     // console.log({session,status,loading})
 
 
@@ -41,12 +47,21 @@ export default function Navbar() {
                         <HouseDoor color="royalblue" size={25} />
                     </a>
                 </Link>
-
+                {/* {user ?  
                 <Link href="/login">
                     <a className="cursor-pointer">
-                        <Person color="royalblue" size={25} />
+                        Se deconecter
                     </a>
                 </Link>
+                :  */}
+                <Link href="/login">
+                <a className="cursor-pointer">
+                    <Person color="royalblue" size={25} />
+                </a>
+            </Link>
+
+                    {/* // } */}
+
 
                 <Button variant="outline-primary" onClick={handleShow}>
                     <List color="royalblue" size={25} />

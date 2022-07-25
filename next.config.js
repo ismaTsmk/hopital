@@ -13,6 +13,11 @@ module.exports = withPWA({
   swcMinify: true,
   pwa: {
     dest: 'public'
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    API_URL: process.env.API_URL,
+
   }
 })
 
